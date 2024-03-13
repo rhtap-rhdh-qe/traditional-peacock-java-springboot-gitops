@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: traditional-peacock-java-springboot-gitops
+  description: This is GitOps manifest for traditional-peacock-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: traditional-peacock-java-springboot
+    janus-idp.io/tekton: traditional-peacock-java-springboot 
+    backstage.io/kubernetes-id: traditional-peacock-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:traditional-peacock-java-springboot
